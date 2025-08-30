@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>utilix - Desarrollo Web Profesional</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">UtiliX</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Sobre nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="btn-toggle">🌙</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="bg-animation"></canvas>
+    <div class="container hero-content">
+      <h2 class="fade-in">Soluciones Digitales con <span class="highlight">IMPACTO</span></h2>
+      <p class="fade-in"> En UtiliX desarrollamos páginas web modernas, rápidas y adaptadas a las necesidades de cada cliente.</p>
+      <a href="#projects" class="btn fade-in">Ver Proyectos</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+<section id="about" class="about section fade-in">
+  <div class="container">
+    <h2>Sobre nosotros</h2>
+    <div class="about-box">
+      <p>
+        En <strong>UtiliX</strong> ofrecemos soluciones digitales personalizadas para empresas y emprendedores 
+        que buscan destacar en el entorno online. Nuestro equipo se especializa en el 
+        <em>diseño y desarrollo de páginas web</em> modernas, rápidas y adaptadas a cualquier dispositivo, 
+        siempre con un enfoque en la experiencia del usuario y el rendimiento.
+      </p>
+      <p>
+        La misión de UtiliX es ayudar a nuestros clientes a impulsar su presencia digital 
+        con proyectos que combinan innovación, funcionalidad y un diseño atractivo.  
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services section fade-in">
+    <div class="container">
+      <h2>Servicios</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Diseño Web</h3>
+          <p>Creación de sitios web visualmente atractivos y adaptados a cualquier dispositivo.</p>
+        </div>
+        <div class="card">
+          <h3>Desarrollo Frontend</h3>
+          <p>Interfaces dinámicas y optimizadas con tecnologías modernas como React y JavaScript.</p>
+        </div>
+        <div class="card">
+          <h3>Backend y APIs</h3>
+          <p>Soluciones robustas y escalables con Node.js y bases de datos seguras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects section fade-in">
+    <div class="container">
+      <h2>Proyectos</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Calculadora</h3>
+          <p>Aplicación web interactiva para realizar operaciones matemáticas.</p>
+          <a href="https://usuario.github.io/calculadora/" target="_blank" class="btn">Ver Demo</a>
+          <a href="https://github.com/usuario/calculadora" target="_blank" class="btn-outline">Código</a>
+        </div>
+        <div class="card">
+          <h3>Gestor de Tareas</h3>
+          <p>Aplicación para organizar y gestionar tareas con almacenamiento local.</p>
+          <a href="#" target="_blank" class="btn">Ver Demo</a>
+          <a href="#" target="_blank" class="btn-outline">Código</a>
+        </div>
+        <div class="card">
+          <h3>Portal de Recetas</h3>
+          <p>Plataforma con API para explorar y compartir recetas online.</p>
+          <a href="#" target="_blank" class="btn">Ver Demo</a>
+          <a href="#" target="_blank" class="btn-outline">Código</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact section fade-in">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>¿Quieres impulsar tu negocio con una página web profesional? Escríbenos:</p>
+      <p><a href="mailto:info@utilix.es" class="highlight">info@utilix.es</a></p>
+      <div class="socials">
+        <a href="https://github.com/usuario" target="_blank">Github</a>
+        <a href="https://linkedin.com/in/usuario" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 UtiliX | Desarrollo Web Profesional</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

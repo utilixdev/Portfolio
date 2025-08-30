@@ -1,0 +1,224 @@
+/* Variables para Light/Dark Mode */
+:root {
+  --bg-color: #f8f9fb;
+  --text-color: #222;
+  --primary: #ffd700;
+  --secondary: #357abd;
+  --card-bg: white;
+  --header-bg: rgba(17,17,17,0.9);
+  --footer-bg: #111;
+}
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eaeaea;
+  --primary: #ffcc00;
+  --secondary: #4da3ff;
+  --card-bg: #1f1f1f;
+  --header-bg: rgba(20,20,20,0.9);
+  --footer-bg: #000;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--bg-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+.header .logo {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.header nav a:hover {
+  color: var(--primary);
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-toggle {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 1rem;
+  color: white;
+  overflow: hidden;
+}
+#bg-animation {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+.hero h2 {
+  font-size: 2.5rem;
+}
+.highlight {
+  color: var(--primary);
+}
+
+/* Botones */
+.btn, .btn-outline {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn {
+  background: var(--primary);
+  color: #111;
+}
+.btn:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+.btn-outline {
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+}
+.btn-outline:hover {
+  background: var(--secondary);
+  color: white;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+/* SOBRE NOSOTROS */
+.about {
+  background: #f4f6fa; /* gris-blau molt clar */
+}
+body.dark .about {
+  background: #1a1a1a; /* fosc premium */
+}
+.about-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .about-box {
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.about-box p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Contacto */
+.contact p {
+  text-align: center;
+}
+.socials {
+  margin-top: 1rem;
+  text-align: center;
+}
+.socials a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--secondary);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.socials a:hover {
+  color: var(--primary);
+}
+
+/* Footer */
+.footer {
+  background: var(--footer-bg);
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Animaciones */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
