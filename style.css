@@ -47,14 +47,14 @@ body {
 }
 .header .logo {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--primary);
 }
 .header nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  margin: 0;
+  gap: 4rem;
+  margin-left: 300px;
 }
 .header nav a {
   color: #fff;
@@ -142,10 +142,10 @@ body {
 }
 /* SOBRE NOSOTROS */
 .about {
-  background: #f4f6fa; /* gris-blau molt clar */
+  background: linear-gradient(135deg, #eef1f7, #dde4f0); /* degradat clar subtil */
 }
 body.dark .about {
-  background: #1a1a1a; /* fosc premium */
+  background: linear-gradient(135deg, #181818, #202020); /* degradat fosc */
 }
 .about-box {
   max-width: 800px;
@@ -208,24 +208,7 @@ body.dark .services .card {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
-/* Contacto */
-.contact p {
-  text-align: center;
-}
-.socials {
-  margin-top: 1rem;
-  text-align: center;
-}
-.socials a {
-  margin: 0 0.5rem;
-  text-decoration: none;
-  color: var(--secondary);
-  font-weight: 600;
-  transition: color 0.3s;
-}
-.socials a:hover {
-  color: var(--primary);
-}
+
 /*Proyectos*/
 .projects {
   background: linear-gradient(135deg, #f9fafc, #e8edf5); /* blau gris molt clar */
