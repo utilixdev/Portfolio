@@ -185,6 +185,64 @@ body.dark .about-box {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
+/* SERVICIOS */
+.services {
+  background: linear-gradient(135deg, #fdfdfd, #f0f4f9); /* clar amb to blau suau */
+  padding: 4rem 0;
+}
+body.dark .services {
+  background: linear-gradient(135deg, #161616, #1c1c1c); /* fosc premium */
+}
+.services .card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+body.dark .services .card {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+}
+.services .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+/* Contacto */
+.contact p {
+  text-align: center;
+}
+.socials {
+  margin-top: 1rem;
+  text-align: center;
+}
+.socials a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--secondary);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.socials a:hover {
+  color: var(--primary);
+}
+/*Proyectos*/
+.projects {
+  background: linear-gradient(135deg, #f9fafc, #e8edf5); /* blau gris molt clar */
+}
+body.dark .projects {
+  background: linear-gradient(135deg, #141414, #1e1e1e); /* fosc elegant */
+}
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+.project-img:hover {
+  transform: scale(1.03);
+}
 
 /* Contacto */
 .contact p {
@@ -203,6 +261,12 @@ body.dark .about-box {
 }
 .socials a:hover {
   color: var(--primary);
+}
+.contact {
+  background: linear-gradient(135deg, #f4f6fa, #eaeef5); 
+}
+body.dark .contact {
+  background: linear-gradient(135deg, #121212, #1a1a1a); 
 }
 
 /* Footer */
