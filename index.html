@@ -7,9 +7,13 @@
  <meta name="keywords" content="desarrollo web, diseño web, páginas web, freelance, utilix, diseño web profesional, portfolio, front-end, seo web">
  <title>UtiliX | Desarrollo Web Profesional - Diseño y SEO</title>
  <link rel="stylesheet" href="style.css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"></noscript>
+<link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
+ <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 </head>
 <body>
  <header class="header">
@@ -128,6 +132,6 @@
   <p>© 2025 UtiliX | Desarrollo Web Profesional</p>
  </footer>
 
- <script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
