@@ -1,3 +1,12 @@
+// Detecta si es un dispositivo móvil y desactiva la animación
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+if (isMobile) {
+    const canvas = document.getElementById("bg-animation");
+    if (canvas) {
+        canvas.remove();
+        document.querySelector(".hero").style.background = "#0d0d0d"; // Fondo estático para modo oscuro
+    }
+}
 // Animación de fondo dinámico y Mouse Trail Effect (sin cambios)
 const canvas = document.getElementById("bg-animation");
 const ctx = canvas.getContext("2d");
