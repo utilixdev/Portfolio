@@ -1,13 +1,4 @@
-// Detecta si es un dispositivo móvil y desactiva la animación
-const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-if (isMobile) {
-    const canvas = document.getElementById("bg-animation");
-    if (canvas) {
-        canvas.remove();
-        document.querySelector(".hero").style.background = "#0d0d0d"; // Fondo estático para modo oscuro
-    }
-}
-// Animación de fondo dinámico y Mouse Trail Effect (sin cambios)
+// Animación de fondo dinámico y Mouse Trail Effect
 const canvas = document.getElementById("bg-animation");
 const ctx = canvas.getContext("2d");
 let mouse = { x: 0, y: 0 };
@@ -77,7 +68,7 @@ function animateParticles() {
 }
 animateParticles();
 
-// Dark/Light Mode Toggle y persistencia (sin cambios)
+// Dark/Light Mode Toggle y persistencia
 const toggleBtn = document.getElementById("theme-toggle");
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
@@ -130,7 +121,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// --- Nuevas interacciones de las secciones ---
+// --- Interacciones de las secciones ---
 const sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -163,21 +154,3 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.section').forEach(section => {
     sectionObserver.observe(section);
 });
-
-// --- Nuevas animaciones en CSS (añadir al final del archivo style.css) ---
-// Animación de las tarjetas para que aparezcan desde abajo
-// @keyframes fadeInUp {
-//     from {
-//         opacity: 0;
-//         transform: translateY(20px);
-//     }
-//     to {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// }
-
-// Y para que funcione, el CSS de .card debe tener
-// opacity: 0;
-// transform: translateY(20px);
-// para que la animación se aplique.
