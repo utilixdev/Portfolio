@@ -1,4 +1,3 @@
-/* ======================== */
 /* || Variables & Base */
 /* ======================== */
 /* Variables para Light/Dark Mode */
@@ -297,7 +296,7 @@ body.dark .projects {
   background: linear-gradient(135deg, #f0f4f9, #e2e8f0);
 }
 body.dark .contact {
-  background: linear-gradient(135deg, #181c20, #141c1c);
+  background: linear-gradient(135deg, #181c20, #14181c);
 }
 
 .contact p {
@@ -364,7 +363,7 @@ body.dark .contact {
     display: block;
     order: 3;
   }
-  
+  
   .header nav {
     position: fixed;
     top: 0;
@@ -392,7 +391,7 @@ body.dark .contact {
     padding: 0;
     text-align: center;
   }
-  
+  
   .header nav ul li a {
       font-size: 1.5rem;
   }
@@ -409,18 +408,16 @@ body.dark .contact {
     grid-template-columns: 1fr;
   }
 }
-
-/* Estilos para el efecto de máquina de escribir */
 .cursor {
-    display: inline-block;
-    animation: blink 0.7s infinite;
-    margin-left: -5px;
-    font-size: 1.05rem;
-    font-weight: bold;
-    color: var(--text-color);
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: -5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
