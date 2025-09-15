@@ -409,3 +409,16 @@ body.dark .contact {
     grid-template-columns: 1fr;
   }
 }
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: -5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
