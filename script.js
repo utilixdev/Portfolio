@@ -125,30 +125,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        
-        // Animación de la sección "Sobre nosotros" (fade-in y máquina de escribir)
+        
+        // Animación de la sección "Sobre nosotros"
         if (entry.target.id === 'about') {
             entry.target.style.animation = "fadeIn 1s forwards";
-
-            // Código del efecto máquina de escribir
-            const textElement = document.getElementById('typewriter-text');
-            if (textElement && !textElement.dataset.typed) { // Añade una comprobación para evitar que se repita
-                const textToType = "En UtiliX ofrecemos soluciones digitales personalizadas para empresas y emprendedores que buscan destacar en el entorno online. Nuestro equipo se especializa en el diseño y desarrollo de páginas web modernas, rápidas y adaptadas a cualquier dispositivo, siempre con un enfoque en la experiencia del usuario y el rendimiento.";
-                let i = 0;
-                
-                function typeWriter() {
-                    if (i < textToType.length) {
-                        textElement.innerHTML += textToType.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 35);
-                    }
-                }
-                
-                typeWriter();
-                textElement.dataset.typed = 'true'; // Marca el elemento como ya escrito
-            }
         }
-        
+        
         // Animación de las tarjetas en "Servicios"
         if (entry.target.id === 'services') {
             const cards = entry.target.querySelectorAll('.card');
@@ -156,7 +138,7 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
                 card.style.animation = `fadeInUp 0.8s ease-out ${index * 0.2}s forwards`;
             });
         }
-        
+        
         // Animación de las tarjetas en "Proyectos"
         if (entry.target.id === 'projects') {
             const cards = entry.target.querySelectorAll('.card');
@@ -172,3 +154,30 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.section').forEach(section => {
     sectionObserver.observe(section);
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+    const textElement = document.getElementById('typewriter-text');
+    const textToType = "En UtiliX ofrecemos soluciones digitales personalizadas para empresas y emprendedores que buscan destacar en el entorno online. Nuestro equipo se especializa en el diseño y desarrollo de páginas web modernas, rápidas y adaptadas a cualquier dispositivo, siempre con un enfoque en la experiencia del usuario y el rendimiento.";
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < textToType.length) {
+            textElement.innerHTML += textToType.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50); // Ajusta la velocidad de escritura aquí (en milisegundos)
+        }
+    }
+
+    // Iniciar el efecto cuando la sección es visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                typeWriter();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 }); // El efecto se dispara cuando el 50% de la sección es visible
+
+    const aboutSection = document.getElementById('about');
+    observer.observe(aboutSection);
+});
+
