@@ -190,5 +190,75 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const aboutSection = document.getElementById('about');
   observer.observe(aboutSection);
 });
+// Manejo del formulario de contacto
+const contactForm = document.getElementById('contact-form');
+const contactBox = document.getElementById('form-box');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(event) {
+        event.preventDefault(); // Detiene el envío del formulario y la redirección
+
+        // Muestra un mensaje de carga (opcional)
+        const submitButton = contactForm.querySelector('.btn');
+        submitButton.textContent = 'Enviando...';
+        submitButton.disabled = true;
+
+        const data = new FormData(event.target);
+
+        try {
+            const response = await fetch(event.target.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json' // Formspree necesita este header
+                }
+            });
+
+            if (response.ok) {
+                // Éxito: Limpia el formulario y muestra un mensaje
+                contactForm.reset(); // Borra todos los campos del formulario
+                const successMessage = document.createElement('p');
+                successMessage.textContent = '✅ ¡Mensaje enviado con éxito! Te contactaremos pronto.';
+                successMessage.classList.add('success-message');
+
+                const existingMessage = contactBox.querySelector('.success-message, .error-message');
+                if (existingMessage) {
+                    existingMessage.remove();
+                }
+                
+                contactBox.appendChild(successMessage);
+            } else {
+                // Error: Muestra un mensaje de error
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = '❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+                errorMessage.classList.add('error-message');
+
+                const existingMessage = contactBox.querySelector('.success-message, .error-message');
+                if (existingMessage) {
+                    existingMessage.remove();
+                }
+
+                contactBox.appendChild(errorMessage);
+            }
+
+        } catch (error) {
+            // Error de red
+            const errorMessage = document.createElement('p');
+            errorMessage.textContent = '❌ Hubo un problema de conexión. Inténtalo de nuevo más tarde.';
+            errorMessage.classList.add('error-message');
+
+            const existingMessage = contactBox.querySelector('.success-message, .error-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            contactBox.appendChild(errorMessage);
+        } finally {
+            // Restablece el botón de envío
+            submitButton.textContent = 'Enviar Mensaje';
+            submitButton.disabled = false;
+        }
+    });
+}
 
 
