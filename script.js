@@ -191,39 +191,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
   observer.observe(aboutSection);
 });
 
-// Manejo del formulario de contacto
-const contactForm = document.getElementById('contact-form');
-const contactSection = document.getElementById('contact');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita el envío tradicional del formulario
-
-        // Simula un envío exitoso. En un entorno real, aquí iría el código de envío a un servidor.
-        const successMessage = document.createElement('p');
-        successMessage.textContent = '✅ ¡Mensaje enviado con éxito! Te contactaremos pronto.';
-        successMessage.classList.add('success-message');
-
-        const errorMessage = document.createElement('p');
-        errorMessage.textContent = '❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-        errorMessage.classList.add('error-message');
-
-        // Elimina cualquier mensaje anterior
-        const oldMessage = contactSection.querySelector('.success-message, .error-message');
-        if (oldMessage) {
-            oldMessage.remove();
-        }
-
-        // Lógica de validación básica
-        const name = this.querySelector('#name').value.trim();
-        const email = this.querySelector('#email').value.trim();
-        const message = this.querySelector('#message').value.trim();
-
-        if (name && email && message) {
-            contactSection.appendChild(successMessage);
-            this.reset(); // Limpia los campos del formulario
-        } else {
-            contactSection.appendChild(errorMessage);
-        }
-    });
-}
